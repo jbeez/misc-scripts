@@ -59,7 +59,7 @@ then
 fi
 if [ $(( $1 & 16384 )) -gt 0 ]
 then
-    echo "Mentat"
+    echo "Machine Learning Violation"
 fi
 if [ $(( $1 & 32768 )) -gt 0 ]
 then
@@ -101,13 +101,21 @@ if [ $(( $1 & 16777216 )) -gt 0 ]
 then
     echo "ACL - Header"
 fi
+if [ $(( $1 & 33554432 )) -gt 0 ]
+then
+    echo "Invalid Custom Token"
+fi
+if [ $(( $1 & 67108864 )) -gt 0 ]
+then
+    echo "Exceeds Maximum CAPTCHA Attempts"
+fi
 if [ $(( $1 & 134217728 )) -gt 0 ]
 then
     echo "ACL - Extension"
 fi
 if [ $(( $1 & 268435456 )) -gt 0 ]
 then
-    echo "Missing Unique ID"
+    echo "Missing Unique ID - Web API"
 fi
 if [ $(( $1 & 536870912 )) -gt 0 ]
 then
